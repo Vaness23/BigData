@@ -35,7 +35,7 @@ function count_data(day)
 end
 
 local day = 1
-local number_of_days = 4
+local number_of_days = 7
 
 while (day <= number_of_days) do
     count_data(day)
