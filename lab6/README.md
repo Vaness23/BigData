@@ -46,3 +46,28 @@ $HIVE_HOME/bin/hive --service hiveserver2 &
 
 ![Hadoop](https://user-images.githubusercontent.com/25685633/146636226-564a2348-8ed9-44d1-ba90-fd9b3854e17b.png)
 ![Hive](https://user-images.githubusercontent.com/25685633/146636235-22e04236-6062-46cb-aed9-44b31d8da720.png)
+
+## Предварительная настройка БД
+
+Для выполнения работы была использована встроенная СУБД Derby. Выполним подключение к Derby следующей командой:
+```
+$HIVE_HOME/bin/beeline -n {username} -u jdbc:hive2://localhost:10000
+```
+{username} -- ваше имя пользователя. Например, для пользователя john_doe команда будет выглядеть следующим образом:
+*$HIVE_HOME/bin/beeline -n john_doe -u jdbc:hive2://localhost:10000*
+
+Создаем новую базу данных, например lab6:
+```
+create database lab6;
+```
+![databases](https://user-images.githubusercontent.com/25685633/146636348-89ad61e2-8eaa-49ad-a56b-f6f7589fdc99.png)
+
+Используем созданную базу данных с помощью команды:
+```
+use lab6;
+```
+
+Создаем таблицу userlog для будущего хранения данных из csv-файлов с разделениями по UserId и HValue в формате parquet:
+```
+create table userlog(Day int, TickTime double, Speed double) partitioned by (UserId int, HValue int) stored as parquet;
+```
