@@ -1,6 +1,6 @@
 # Lab 6
 
-Практика по генерации таблиц с данными из csv-файлов с помощью сервисов Hadoop и Hive.
+Практика по генерации таблиц с данными из csv-файлов с помощью сервисов Hadoop и Hive. Выполняется с помощью *WSL Ubuntu*.
 
 ## Предварительная настройка
 
@@ -41,3 +41,8 @@ sudo service ssh restart
 $HIVE_HOME/bin/hive --service metastore &
 $HIVE_HOME/bin/hive --service hiveserver2 &
 ```
+
+В случае успеха Hadoop будет доступен по адресу *localhost:9870*, Hive -- по адресу *localhost: 10002*:
+
+![Hadoop](https://user-images.githubusercontent.com/25685633/146636226-564a2348-8ed9-44d1-ba90-fd9b3854e17b.png)
+![Hive](https://user-images.githubusercontent.com/25685633/146636235-22e04236-6062-46cb-aed9-44b31d8da720.png)
