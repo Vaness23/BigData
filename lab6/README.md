@@ -25,3 +25,19 @@ $HADOOP_HOME/sbin/start-all.sh
 sudo service ssh restart
 ```
 После чего повторить команду запуска Hadoop.
+
+Проверить успешность запуска сервисов можно с помощью команды *jps*. В случае успеха в выводе консоли отобразятся 6 запущенных процессов:
+```
+2226 Jps
+514 ResourceManager
+1595 SecondaryNameNode
+1292 DataNode
+1102 NameNode
+1998 NodeManager
+```
+
+Теперь запускаем сервисы Hive с помощью выполнения двух последовательных команд:
+```
+$HIVE_HOME/bin/hive --service metastore &
+$HIVE_HOME/bin/hive --service hiveserver2 &
+```
