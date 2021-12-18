@@ -71,3 +71,22 @@ use lab6;
 ```
 create table userlog(Day int, TickTime double, Speed double) partitioned by (UserId int, HValue int) stored as parquet;
 ```
+
+![empty_userlog](https://user-images.githubusercontent.com/25685633/146636415-1a2540ed-c771-4b13-8496-83f5c19fc3ae.png)
+
+## Копирование данных в директорию Hive
+
+Необходимо предварительно выдать права на чтение файлов с данными. Для этого нужно перейти в папку с данными и выполнить следующие команды:
+```
+sudo chown vaness {folder_name}
+sudo chmod a+rw {folder_name}
+sudo chown vaness {folder_name}/*
+sudo chmod a+r {folder_name}/*
+```
+
+Теперь можно начать копирование csv-файлов в директорию Hive:
+```
+hdfs dfs -mkdir /user/lab6
+hdfs dfs -put /home/{username}/{folder_name}/* /user/lab6
+```
+
