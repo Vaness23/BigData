@@ -1,3 +1,7 @@
+*.csv
+*.xlog
+*.snap
+
 # Compiled Lua sources
 luac.out
 

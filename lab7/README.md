@@ -17,3 +17,4 @@ tarantool data_process.lua
 ```
 
 Скрипт выводит медианное значение скорости (Speed Median), максимальное (Max Time) и минимальное (Min Time) время по каждому дню.
+
